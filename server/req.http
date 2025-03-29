@@ -1,0 +1,37 @@
+### Register/Login with Clerk (Get User Info)
+GET http://localhost:5000/api/auth/me
+Authorization: Bearer YOUR_CLERK_JWT_TOKEN
+Content-Type: application/json
+
+
+### Create a New Listing
+POST http://localhost:5000/api/listings/create
+Content-Type: application/json
+
+{
+  "title": "Tractor",
+  "description": "John Deere 5050D, excellent condition",
+  "price": 7500,
+  "category": "equipment",
+  "owner": "USER_CLERK_ID"
+}
+
+### Fetch All Listings
+GET http://localhost:5000/api/listings
+Content-Type: application/json
+
+
+### Create an Order
+POST http://localhost:5000/api/orders/create
+Content-Type: application/json
+
+{
+  "listing": "LISTING_OBJECT_ID",
+  "buyer": "BUYER_CLERK_ID",
+  "quantity": 2,
+  "totalPrice": 15000
+}
+
+### Fetch All Orders
+GET http://localhost:5000/api/orders
+Content-Type: application/json
